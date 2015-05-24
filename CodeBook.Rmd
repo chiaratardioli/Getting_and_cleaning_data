@@ -1,0 +1,89 @@
+---
+output:
+  html_document:
+    keep_md: yes
+---
+The Code Book
+======================================
+
+It describes the variables, the data, and any transformations or work that I performed to clean up the data used by the R code `run_analysis.R`. 
+
+## Raw data
+Form the weblink 
+
+[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+we download a folder named `UCI HAR Dataset`.
+
+In the README file of this folder there is an explanation for the data source.
+The experiments was carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person had performed six activities wearing a smartphone (Samsung Galaxy S II) on the waist.
+
+Using its embedded accelerometer and gyroscope, they captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments was video-recorded to label the data manually. Then, the obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+### Activity
+The activities are label as follows:
+
+- 1 WALKING
+- 2 WALKING_UPSTAIRS
+- 3 WALKING_DOWNSTAIRS
+- 4 SITTING
+- 5 STANDING
+- 6 LAYING 
+
+### Features
+The list of features is cointained in the file `features.txt`:
+```{r read_features}
+features <- read.table("UCI HAR Dataset/features.txt", col.names = c("id","name")) # read features names
+dim(features)
+head(features)
+tail(features,20)
+```
+where `t` at the beginning of the variable names stands for `time` and `f` for `frequency`.
+
+The set of variables that were estimated from these signals are:
+
+- mean(): Mean value
+- std(): Standard deviation
+- mad(): Median absolute deviation 
+- max(): Largest value in array
+- min(): Smallest value in array
+- sma(): Signal magnitude area
+- energy(): Energy measure. Sum of the squares divided by the number of values. 
+- iqr(): Interquartile range 
+- entropy(): Signal entropy
+- arCoeff(): Autorregresion coefficients with Burg order equal to 4
+- correlation(): correlation coefficient between two signals
+- maxInds(): index of the frequency component with largest magnitude
+- meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+- skewness(): skewness of the frequency domain signal 
+- kurtosis(): kurtosis of the frequency domain signal 
+- bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+- angle(): Angle between to vectors.
+
+All the information about the variables used on the feature vector are provided in the file `features_info.txt`of the downloaded folder.
+
+### Measurements
+The measurements, the ativity labels and the identifier of the subject who carried out the experiment are contained in different files.
+
+In `UCI HAR Dataset/train` folder we find information for the training data:
+- `X_train.txt` containts the measurements.
+- `y_train.txt` containts the ativity labels (from 1 to 6).
+- `subject_train.txt` contains the subject identifier (from 1 to 30).
+
+In `UCI HAR Dataset/test` folder we find information for the test data:
+- `X_test.txt` containts the measurements.
+- `y_test.txt` containts the ativity labels (from 1 to 6).
+- `subject_test.txt` contains the subject identifier (from 1 to 30).
+
+The traing and test dataset can be read for axample using R by:
+```{r read_data,cache=TRUE}
+x_train <- read.table("UCI HAR Dataset/train/X_train.txt") # read training data
+dim(x_train)
+x_test <- read.table("UCI HAR Dataset/test/X_test.txt")    # read test data
+dim(x_test)
+```
+and we notice that the number of columns of the each dataset is `r ncol(x_test)`. So, for each features, the row number correspond to the column number in the measurement dataset.
+
+## Processing data
+No process has been made for this analysis.
+
