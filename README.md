@@ -7,10 +7,10 @@ The data for the project have been collected from the accelerometers from the Sa
 [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zips](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
 ## Understanding the data
-The [Code Book](./CodeBook.md) describes the variables names and the data in each files.
+The [CodeBook.md](./CodeBook.md) describes the variables names and the data in each files.
 
 ## Analysis
-The R code [Run analysis](./run_analysis.R) performs an analysis on the data collected on the activity measurements. The goal is to extracts only the variables related to the mean and standard deviation for each measurement and to create a tiny dataset containing the average of variable for each activity and each subject.
+The R code [run_analysis.R](./run_analysis.R) performs an analysis on the data collected on the activity measurements. The goal is to extracts only the variables related to the mean and standard deviation for each measurement and to create a tiny dataset containing the average of variable for each activity and each subject.
 
 ## File in this repository:
 - `README.md`
