@@ -40,6 +40,6 @@ mergeData <- cbind(x_data,y_data,s_data)  # all the info in a single fata frame
 
 groupData <- aggregate(. ~subject.ID + activity.label, mergeData, mean)
 groupData <- groupData[order(groupData$subject.ID,groupData$activity.label),]
-write.table(groupData, file = "tidy_dataset.txt", row.name = FALSE)
+write.table(groupData, file = "tidy_dataset.txt", row.name = FALSE, sep = "\t")
 
 
