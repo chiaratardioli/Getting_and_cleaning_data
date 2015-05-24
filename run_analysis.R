@@ -1,6 +1,5 @@
 # RUN ANALYSIS.R
-# Note: The input datasets are obtained by cleaning up the data provided in UCI HAR Dataset.
-#       Look at the CodeBook.md for more info.
+# Note: Input data: UCI HAR Dataset. Look at the CodeBook.md for more info.
 
 library(dplyr)
 

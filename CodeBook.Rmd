@@ -9,7 +9,7 @@ The Code Book
 It describes the variables, the data, and any transformations or work that I performed to clean up the data used by the R code `run_analysis.R`. 
 
 ## Raw data
-Form the weblink 
+Form the web link 
 
 [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
@@ -31,7 +31,7 @@ The activities are label as follows:
 - 6 LAYING 
 
 ### Features
-The list of features is cointained in the file `features.txt`:
+The list of features is contained in the file `features.txt`:
 ```{r read_features}
 features <- read.table("UCI HAR Dataset/features.txt", col.names = c("id","name")) # read features names
 dim(features)
@@ -63,19 +63,19 @@ The set of variables that were estimated from these signals are:
 All the information about the variables used on the feature vector are provided in the file `features_info.txt`of the downloaded folder.
 
 ### Measurements
-The measurements, the ativity labels and the identifier of the subject who carried out the experiment are contained in different files.
+The measurements, the activity labels and the identifier of the subject who carried out the experiment are contained in different files.
 
 In `UCI HAR Dataset/train` folder we find information for the training data:
-- `X_train.txt` containts the measurements.
-- `y_train.txt` containts the ativity labels (from 1 to 6).
+- `X_train.txt` contains the measurements.
+- `y_train.txt` contains the activity labels (from 1 to 6).
 - `subject_train.txt` contains the subject identifier (from 1 to 30).
 
 In `UCI HAR Dataset/test` folder we find information for the test data:
-- `X_test.txt` containts the measurements.
-- `y_test.txt` containts the ativity labels (from 1 to 6).
+- `X_test.txt` contains the measurements.
+- `y_test.txt` contains the activity labels (from 1 to 6).
 - `subject_test.txt` contains the subject identifier (from 1 to 30).
 
-The traing and test dataset can be read for axample using R by:
+The training and test dataset can be read for example using R by:
 ```{r read_data,cache=TRUE}
 x_train <- read.table("UCI HAR Dataset/train/X_train.txt") # read training data
 dim(x_train)
